@@ -14,3 +14,5 @@ gpa <- round(rnorm(n = 100, mean = 2.8, sd = .3), 2)
 # create data.frame
 df <- data.frame(id, gender, gpa)
 
+
+df$gpa2 <- df$gpa+1
