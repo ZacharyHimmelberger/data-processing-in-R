@@ -16,6 +16,42 @@ gender <- sample(x = c("male", "female", "non-binary"),
 
 gpa <- round(rnorm(n = n, mean = 2.8, sd = .3), 2)
 
+RaceEthnicity1 <- sample(x = c("White or Caucasian", 
+                               "Black or African American", 
+                               "Asian or Asian American"), 
+                        size = n,
+                        replace = TRUE, 
+                        prob = c(.5, .3, .2))
+
+
+
+GM_probabilities <- sample(x = seq(.1, .9, .01),
+                           size = n,
+                           replace = TRUE)
+
+GM_1 <- rbinom(n = n, 
+               size = 5,
+               prob = x) + 1
+
+GM_2 <- rbinom(n = n, 
+               size = 5,
+               prob = x) + 1
+
+GM_3 <- rbinom(n = n, 
+               size = 5,
+               prob = x) + 1
+
+GM_4_R <- 6 - rbinom(n = n, 
+               size = 5,
+               prob = x) + 1
+
 # create data.frame
-df <- data.frame(id, gender, gpa)
+raw_df <- data.frame(id, 
+                 gender, 
+                 gpa,
+                 RaceEthnicity1,
+                 GM_1,
+                 GM_2,
+                 GM_3,
+                 GM_4_neg)
 
