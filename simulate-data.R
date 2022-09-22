@@ -55,3 +55,11 @@ raw_df <- data.frame(id,
                  GM_3,
                  GM_4_neg)
 
+# randomly replace values with NA
+df <- as.data.frame(
+  apply(raw_df, 
+        1:2, 
+        \(x) sample(c(x, NA), 
+                   1, 
+                   prob=c((1 - .1), .1))))
+
